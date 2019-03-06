@@ -24,9 +24,8 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    //opens the second screen of the customer journey
     public void openHomeScreen() {
-       Intent intent = new Intent(this, PackageSecond.class);
+       Intent intent = new Intent(this, CustomerHomeScreen.class);
        startActivity(intent);
     }
 }

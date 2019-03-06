@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Retouro_V1</string>
+    <string name="title_activity_customer_home_screen">CustomerHomeScreen</string>
+    <string name="title_activity_package_first">PackageFirst</string>
 </resources>

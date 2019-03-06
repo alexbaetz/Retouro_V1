@@ -20,13 +20,15 @@ public class PackageSecond extends AppCompatActivity {
         setContentView(R.layout.activity_package_second);
 
         packageVolume = (TextView) findViewById(R.id.volumeTextView);
+        packageVolume.setText(getIntent().getStringExtra("EXTRA_VOLUME"));
+
         volume = packageVolume.getText().toString();
 
         prime = (Button) findViewById(R.id.primeButton);
         prime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pricemodel = "Prime";
+                pricemodel = "Preismodell: Prime";
                 openPackageThird();
             }
         });

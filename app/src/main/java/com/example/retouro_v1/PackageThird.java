@@ -1,6 +1,7 @@
 package com.example.retouro_v1;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +13,14 @@ import java.util.Calendar;
 public class PackageThird extends AppCompatActivity implements
         DatePickerDialog.OnDateSetListener, TimeDialog.TimeDialogListener {
 
-    Button selectDay;
-    Button selectTime;
-    TextView showDay;
-    TextView showTime;
-    TextView showVolume;
-    TextView showPricemodel;
+    private Button selectDay;
+    private Button selectTime;
+    private Button confirmButton;
+    private Button cancelButton;
+    private TextView showDay;
+    private TextView showTime;
+    private TextView showVolume;
+    private TextView showPricemodel;
 
     int day, month, year;
     int dayFinal, monthFinal, yearFinal;
@@ -37,6 +40,9 @@ public class PackageThird extends AppCompatActivity implements
 
         selectTime = (Button) findViewById(R.id.selectTimeButton);
         showTime = (TextView) findViewById(R.id.selectTimeView);
+
+        confirmButton = (Button) findViewById(R.id.confirmButton);
+        cancelButton = (Button) findViewById(R.id.cancelButton);
 
         showVolume.setText(getIntent().getStringExtra("EXTRA_VOLUME"));
         showPricemodel.setText(getIntent().getStringExtra("EXTRA_PRICEMODEL"));
@@ -60,6 +66,13 @@ public class PackageThird extends AppCompatActivity implements
                 openTimeDialog();
             }
         });
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmOrder();
+            }
+        });
     }
 
     @Override
@@ -79,5 +92,12 @@ public class PackageThird extends AppCompatActivity implements
     @Override
     public void applyTime(String selectedStartTime) {
         showTime.setText(selectedStartTime + " Uhr");
+    }
+
+    public void confirmOrder() {
+        Intent intent = new Intent(this, CustomerHomeScreen.class);
+        intent.putExtra("EXTRA_DATE", showDay.getText().toString());
+        intent.putExtra("EXTRA_TIME", showTime.getText().toString());
+        startActivity(intent);
     }
 }

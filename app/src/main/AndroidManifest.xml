@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PackageThird"></activity>
+        <activity android:name=".PackageFourth"></activity>
+        <activity android:name=".PackageFirst" />
+        <activity android:name=".CustomerHomeScreen" />
+        <activity android:name=".PackageThird" />
         <activity android:name=".PackageSecond" />
         <activity android:name=".LoginActivity">
             <intent-filter>
