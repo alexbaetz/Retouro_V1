@@ -2,6 +2,8 @@ package com.example.retouro_v1;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +33,8 @@ public class PackageThird extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_package_third);
+
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#446B14")));
 
         showVolume = (TextView) findViewById(R.id.volumeTextView);
         showPricemodel = (TextView) findViewById(R.id.priceTextView);
@@ -81,7 +85,12 @@ public class PackageThird extends AppCompatActivity implements
         monthFinal = month + 1;
         dayFinal = dayOfMonth;
 
-        showDay.setText(dayFinal + "." + monthFinal + "." + yearFinal);
+        if (monthFinal < 10) {
+            showDay.setText(dayFinal + "." + "0" + monthFinal + "." + yearFinal);
+        } else {
+            showDay.setText(dayFinal + "." + monthFinal + "." + yearFinal);
+        }
+
     }
 
     public void openTimeDialog() {
