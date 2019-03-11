@@ -72,10 +72,10 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="52dp"
         android:layout_marginBottom="8dp"
         android:text="Deine Auftragsübersicht:"
         android:textSize="24sp"
