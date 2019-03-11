@@ -48,7 +48,7 @@ public class CustomerHomeScreen extends AppCompatActivity {
             list_orders.add(0,"Retoure vom " + getIntent().getStringExtra("EXTRA_DATE"));
             orderRetoure.setText("Ihr aktueller Auftrag:");
             retoureDescription.setVisibility(View.VISIBLE);
-            retoureDescription.setText("Ihre Retoure wird am "+ getIntent().getStringExtra("EXTRA_DATE") + " zwischen " + getIntent().getStringExtra("EXTRA_TIME") + "von einem unseren Rider abgeholt.");
+            retoureDescription.setText("Ihre Retoure wird am "+ getIntent().getStringExtra("EXTRA_DATE") + " zwischen " + getIntent().getStringExtra("EXTRA_TIME") + " von einem unserer Rider abgeholt.");
         }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_orders);
