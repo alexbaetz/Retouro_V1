@@ -15,8 +15,13 @@ import com.diegodobelo.expandingview.ExpandingList;
 public class PackageSecond extends AppCompatActivity {
 
     private TextView packageVolume;
+    private TextView primeDescription;
+    private TextView saferDescription;
     ExpandingList expandingList;
     private Button prime;
+    private Button safer;
+    private Button getPrime;
+    private Button getSafer;
     String volume;
     String pricemodel;
 
@@ -32,23 +37,37 @@ public class PackageSecond extends AppCompatActivity {
 
         volume = packageVolume.getText().toString();
 
-        expandingList = (ExpandingList) findViewById(R.id.expanding_list_main);
+        primeDescription = (TextView) findViewById(R.id.primeDescription);
+        saferDescription = (TextView) findViewById(R.id.saferDescription);
+        getPrime = (Button) findViewById(R.id.confirmPrime);
+        getSafer = (Button) findViewById(R.id.confirmSafer);
 
-        ExpandingItem item = expandingList.createNewItem(R.layout.expanding_layout);
-        ((TextView) item.findViewById(R.id.item_title)).setText("IT WOKRS");
-
-        item.createSubItems(2);
-
-        View subItemZero = item.getSubItemView(0);
-        ((TextView) subItemZero.findViewById(R.id.sub_title)).setText("Cool");
-
-        View subItemOne = item.getSubItemView(1);
-        ((TextView) subItemOne.findViewById(R.id.sub_title)).setText("Uncool");
-
-        item.setIndicatorColor(R.color.colorAccent);
+        saferDescription.setVisibility(View.GONE);
+        getSafer.setVisibility(View.GONE);
 
         prime = (Button) findViewById(R.id.primeButton);
         prime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saferDescription.setVisibility(View.GONE);
+                getSafer.setVisibility(View.GONE);
+                primeDescription.setVisibility(View.VISIBLE);
+                getPrime.setVisibility(View.VISIBLE);
+            }
+        });
+
+        safer = (Button) findViewById(R.id.saferButton);
+        safer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                primeDescription.setVisibility(View.GONE);
+                getPrime.setVisibility(View.GONE);
+                saferDescription.setVisibility(View.VISIBLE);
+                getSafer.setVisibility(View.VISIBLE);
+            }
+        });
+
+        getPrime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pricemodel = "Preismodell: Prime";

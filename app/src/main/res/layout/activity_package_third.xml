@@ -10,9 +10,9 @@
         android:id="@+id/volumeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +20,12 @@
 
     <TextView
         android:id="@+id/priceTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,19 @@
         app:layout_constraintTop_toBottomOf="@+id/priceTextView">
 
         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Die Abholung erfolgt am"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center">
@@ -51,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="30dp"
-                android:text="Choose your Date"
+                android:text="Bitte Datum wählen"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toStartOf="@+id/selectDayButton"
                 app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +82,7 @@
                 android:id="@+id/selectDayButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Calendar"
+                android:text="Verfügbare Tage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </TableRow>
@@ -80,11 +94,24 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Die Abholung erfolgt zwischen"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
                 android:id="@+id/selectTimeView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="30dp"
-                android:text="Choose your Time"
+                android:text="Bitte Zeitslot wählen"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toStartOf="@+id/selectTimeButton"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +128,7 @@
                 android:id="@+id/selectTimeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:text="Verfügbare Zeitslots"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/selectDayButton" />
         </TableRow>
@@ -114,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
-        android:text="Confirm"
+        android:text="Verbindlich Buchen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -124,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
-        android:text="Cancel"
+        android:text="Abbrechen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

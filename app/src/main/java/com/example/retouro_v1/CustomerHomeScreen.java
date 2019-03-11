@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,10 +19,13 @@ public class CustomerHomeScreen extends AppCompatActivity {
 
     private Button startReturn;
     private ListView listOrders;
+    private TextView orderRetoure;
+    private TextView retoureDescription;
 
     String [] orders = new String[] {
+            "Retoure vom 28.02.2019",
             "Retoure vom 19.02.2019",
-            "Retoure vom 28.02.2019"
+            "Retoure vom 31.01.2019"
     };
 
     @Override
@@ -31,12 +35,20 @@ public class CustomerHomeScreen extends AppCompatActivity {
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#446B14")));
 
+        orderRetoure = (TextView) findViewById(R.id.orderRetoure);
+        retoureDescription = (TextView) findViewById(R.id.retoureDescription);
+
+        retoureDescription.setVisibility(View.GONE);
+
         listOrders = findViewById(R.id.orderList);
 
         List<String> list_orders = new ArrayList<String>(Arrays.asList(orders));
 
         if(getIntent().getStringExtra("EXTRA_DATE") != null) {
             list_orders.add(0,"Retoure vom " + getIntent().getStringExtra("EXTRA_DATE"));
+            orderRetoure.setText("Ihr aktueller Auftrag:");
+            retoureDescription.setVisibility(View.VISIBLE);
+            retoureDescription.setText("Ihre Retoure wird am "+ getIntent().getStringExtra("EXTRA_DATE") + " zwischen " + getIntent().getStringExtra("EXTRA_TIME") + "von einem unseren Rider abgeholt.");
         }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_orders);

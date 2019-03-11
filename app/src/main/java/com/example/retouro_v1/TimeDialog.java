@@ -26,8 +26,7 @@ public class TimeDialog extends AppCompatDialogFragment {
             "17:00 - 18:00",
             "18:00 - 19:00",
             "19:00 - 20:00",
-            "20:00 - 21:00",
-            "21:00 - 22:00"};
+            "20:00 - 21:00"};
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -38,11 +37,11 @@ public class TimeDialog extends AppCompatDialogFragment {
 
         timePicker = (NumberPicker) view.findViewById(R.id.timePicker);
         timePicker.setMinValue(0);
-        timePicker.setMaxValue(14);
+        timePicker.setMaxValue(13);
         timePicker.setDisplayedValues(timeSlot);
 
         builder.setView(view)
-                .setTitle("Choose your preferred Timeslot:")
+                .setTitle("Bitte wählen Sie einen Zeitslot:")
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
