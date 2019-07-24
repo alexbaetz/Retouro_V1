@@ -48,7 +48,7 @@ public class PackageThird extends AppCompatActivity implements
         confirmButton = (Button) findViewById(R.id.confirmButton);
         cancelButton = (Button) findViewById(R.id.cancelButton);
 
-        showVolume.setText(getIntent().getStringExtra("EXTRA_VOLUME"));
+        showVolume.setText(getIntent().getStringExtra("EXTRA_DISTRICT"));
         showPricemodel.setText(getIntent().getStringExtra("EXTRA_PRICEMODEL") + "\n (Kosten: 4€)");
 
         selectDay.setOnClickListener(new View.OnClickListener() {

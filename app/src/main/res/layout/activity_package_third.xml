@@ -51,7 +51,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Die Abholung erfolgt am"
+                android:text="Meine Schicht ist am:"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -97,7 +97,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Die Abholung erfolgt zwischen"
+                android:text="Der Zeitraum meiner Schicht ist:"
                 android:textSize="18sp" />
         </TableRow>
 

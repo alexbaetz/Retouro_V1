@@ -23,9 +23,9 @@ public class CustomerHomeScreen extends AppCompatActivity {
     private TextView retoureDescription;
 
     String [] orders = new String[] {
-            "Retoure vom 28.02.2019",
-            "Retoure vom 19.02.2019",
-            "Retoure vom 31.01.2019"
+            "Schicht am 16.07.2019",
+            "Schicht am 18.07.2019",
+            "Schicht am 23.07.2019"
     };
 
     @Override
@@ -45,10 +45,10 @@ public class CustomerHomeScreen extends AppCompatActivity {
         List<String> list_orders = new ArrayList<String>(Arrays.asList(orders));
 
         if(getIntent().getStringExtra("EXTRA_DATE") != null) {
-            list_orders.add(0,"Retoure vom " + getIntent().getStringExtra("EXTRA_DATE"));
-            orderRetoure.setText("Ihr aktueller Auftrag:");
+            list_orders.add(0,"Schicht am " + getIntent().getStringExtra("EXTRA_DATE"));
+            orderRetoure.setText("Ihre nächste Schicht:");
             retoureDescription.setVisibility(View.VISIBLE);
-            retoureDescription.setText("Ihre Retoure wird am "+ getIntent().getStringExtra("EXTRA_DATE") + " zwischen " + getIntent().getStringExtra("EXTRA_TIME") + " von einem unserer Rider abgeholt.");
+            retoureDescription.setText("Ihre Schicht am "+ getIntent().getStringExtra("EXTRA_DATE") + " zwischen " + getIntent().getStringExtra("EXTRA_TIME") + " wurde bestätigt.");
         }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_orders);
